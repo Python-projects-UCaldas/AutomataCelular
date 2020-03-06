@@ -3,7 +3,6 @@ from threading import Thread
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMessageBox
 from PyQt5 import uic, QtCore, Qt
 from grid import *
-from box import *
 
 ##############################INTERFACE##############################
 
@@ -57,26 +56,16 @@ class Ventana(QMainWindow):
 		pygame.display.set_caption("Animación Automata Celular")
 		hecho = False
 		reloj = pygame.time.Clock()
-		box1 = Box(10, 10, 20, 20, BLANCO, 2)
-		box2 = Box(350, 10, 20, 20, ROJO, 2)
-		grid = Grid(box1.getColor(), 10, 28, box1)
-		grid2 = Grid(ROJO, 10, 28, box2)
-		box_list1 = grid.draw_grid(pantalla, 5)
-		box_list2 = grid2.draw_grid(pantalla, 5)
-		print(box_list1, '\n', box_list2)
-		
-		"""
 		grid = Grid(BLANCO, 20, 20)
+		grid.create_grid(pantalla, 5, 28, 10, 10, 10)
 		grid2 = Grid(VERDE, 20, 20)
+		grid2.create_grid(pantalla, 5, 28, 10, 10, 295)
 		grid3 = Grid(ROJO, 20, 20)
+		grid3.create_grid(pantalla, 5, 28, 10, 10, 580)
 		grid4 = Grid(MORADO, 20, 20)
-		grid5 = Grid(MORADO, 20, 20)
-		pantalla.fill(NEGRO)
-		grid.draw_grid(pantalla, 5, 28, 10, 10, 10)
-		grid2.draw_grid(pantalla, 5, 28, 10, 10, 295)
-		grid3.draw_grid(pantalla, 5, 28, 10, 10, 580)
-		grid4.draw_grid(pantalla, 5, 28, 10, 10, 865)
-		"""
+		grid4.create_grid(pantalla, 5, 28, 10, 10, 865)
+
+		cambiar = False
 		# -------- Bucle Principal del Programa-----------
 		while not hecho:
 		    for evento in pygame.event.get(): 
@@ -85,7 +74,37 @@ class Ventana(QMainWindow):
 		        elif evento.type == pygame.MOUSEBUTTONDOWN:
 		        	pos = pygame.mouse.get_pos()
 		        	print("Click ", pos)
-		    #pantalla.fill(NEGRO)
+		        	if cambiar == False:
+			        	t1 = Thread(target = grid.change_colors, name = 'thread1', args = (NEGRO, pantalla)) # Create the thread
+			        	t1.daemon = True #To kill the thread when the program stops,if False the thread will not stop will not stop at the same time the program does
+			        	
+			        	t2 = Thread(target = grid2.change_colors, name = 'thread2', args = (NEGRO, pantalla)) # Create the thread
+			        	t2.daemon = True #To kill the thread when the program stops,if False the thread will not stop will not stop at the same time the program does
+			        	
+			        	t3 = Thread(target = grid3.change_colors, name = 'thread3', args = (NEGRO, pantalla)) # Create the thread
+			        	t3.daemon = True #To kill the thread when the program stops,if False the thread will not stop will not stop at the same time the program does
+			        	
+			        	t4 = Thread(target = grid4.change_colors, name = 'thread4', args = (NEGRO, pantalla)) # Create the thread
+			        	t4.daemon = True #To kill the thread when the program stops,if False the thread will not stop will not stop at the same time the program does
+			        	t1.start() #To initialize the thread
+			        	print("Hello1")
+			        	t2.start() #To initialize the thread
+			        	print("Hello2")
+			        	t3.start() #To initialize the thread
+			        	print("Hello3")
+			        	t4.start() #To initialize the thread
+			        	print("Hello4")
+			        	print(t1.name)
+
+			        	cambiar = True
+
+
+		    pantalla.fill(NEGRO)
+		    grid.draw_grid(pantalla)
+		    grid2.draw_grid(pantalla)
+		    grid3.draw_grid(pantalla)
+		    grid4.draw_grid(pantalla)
+
 		     
 		    reloj.tick(60)
 
