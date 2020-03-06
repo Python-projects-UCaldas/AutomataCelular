@@ -77,15 +77,24 @@ class Grid(object):
 						newBox.getHeight(), newBox.getWidth()))
 
 	def repaint_grid(self, surface, color, positions, box, value):
-
+		lista = []
+		lista2 = []
+		for i in positions:
+			lista.append(positions[i])
+		for i in range(len(lista)):
+			lista2.append(lista[0::self.columns])
+			lista[self.columns::len(lista)-1]
+			#print(lista2)
 		for k, v in positions.items(): 
 			if v == value:
 				newBox = Box(tuple(k)[0], tuple(k)[1], self.box.getWidth(),
 					self.box.getHeight(), color,
-					value)
+					random.randint(0,5))
 				pygame.draw.rect(surface, newBox.getColor(),
 					(newBox.getLeft(),newBox.getTop(),
 						newBox.getHeight(), newBox.getWidth()))
+				pygame.display.update()
+		
 
 	def positions(self, surface):
 		positions = {}
