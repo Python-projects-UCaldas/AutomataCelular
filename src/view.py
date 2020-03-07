@@ -88,6 +88,10 @@ class WindowPQ(QMainWindow):
 			args = (pygameScreen, red, box_list4, box4, 3)) # Create the thread
 			t4.daemon = True
 			t4.start()
+			t1.join()
+			t2.join()
+			t3.join()
+			t4.join()
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					done = True
