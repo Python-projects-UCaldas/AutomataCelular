@@ -29,7 +29,7 @@ class WindowPQ(QMainWindow):
 
 
 	def initUI(self):
-		self.inputRegla.text()
+		self.inputRule.text()
 		self.start.clicked.connect(lambda:self.pygameWindow())	
 	
 
@@ -52,57 +52,50 @@ class WindowPQ(QMainWindow):
 		grid3 = Grid(10, 28, 5, box3)
 		grid4 = Grid(10, 28, 5, box4)
 
-		grid1.draw_grid(pygameScreen)
-		grid2.draw_grid(pygameScreen)
-		grid3.draw_grid(pygameScreen)
-		grid4.draw_grid(pygameScreen)
-
 		box_list1 = grid1.positions(pygameScreen)
 		box_list2 = grid2.positions(pygameScreen)
 		box_list3 = grid3.positions(pygameScreen)
 		box_list4 = grid4.positions(pygameScreen)
 
-		print('positions grid1: ','\n',
+		'''print('positions grid1: ','\n',
 			box_list1, '\n', '\n','\n',
-			'positions grid2: ','\n', box_list2)
+			'positions grid2: ','\n', box_list2)'''
 
 		################# PYGAME MAIN LOOP #################
 
 		while not done:
-		    for event in pygame.event.get(): 
-		        if event.type == pygame.QUIT: 
-		            done = True
-		        elif event.type == pygame.MOUSEBUTTONDOWN:
-		        	pos = pygame.mouse.get_pos()
-		        	print("Click ", pos)
-		        elif event.type == pygame.KEYDOWN:
-		        	if event.key == K_r:
-		        		t1 = Thread(target = grid1.repaint_grid, name = 'thread1', 
-						args = (pygameScreen, green, box_list1, box1, 3)) # Create the thread
-			        	t1.daemon = True
-			        	t1.start() #To initialize the thread
-			        	t2 = Thread(target = grid2.repaint_grid, name = 'thread2', 
-			        	args = (pygameScreen, white, box_list2, box2, 0)) # Create the thread
-			        	t2.daemon = True
-			        	t2.start()
-			        	t3 = Thread(target = grid3.repaint_grid, name = 'thread3', 
-			        	args = (pygameScreen, purple, box_list3, box3, 1)) # Create the thread
-			        	t3.daemon = True
-			        	t3.start()
-			        	t4 = Thread(target = grid4.repaint_grid, name = 'thread4', 
-			        	args = (pygameScreen, red, box_list4, box4, 2)) # Create the thread
-			        	t4.daemon = True
-			        	t4.start()
-			        	"""To kill the thread when the program stops,
-			        	 False the thread will not stop will not stop at the same time the program does"""
-			        	t2 = Thread(target = grid1.draw_grid, name = 'thread2', 
-		        		args = (pygameScreen,))
-			        	t2.daemon = True
-			        	t2.start()
-		        		 
-		    clock.tick(60)
-
-		    pygame.display.flip()
+			grid1.draw_grid(pygameScreen)
+			pygame.display.update()
+			t1 = Thread(target = grid1.repaint_grid, name = 'thread1',
+			args = (pygameScreen, green, box_list1, box1, 3)) # Create the thread
+			t1.daemon = True
+			t1.start()
+			grid2.draw_grid(pygameScreen)
+			pygame.display.update()
+			t2 = Thread(target = grid2.repaint_grid, name = 'thread2',
+			args = (pygameScreen, purple, box_list2, box2, 3)) # Create the thread
+			t2.daemon = True
+			t2.start()
+			grid3.draw_grid(pygameScreen)
+			pygame.display.update()
+			t3 = Thread(target = grid3.repaint_grid, name = 'thread3',
+			args = (pygameScreen, white, box_list3, box3, 3)) # Create the thread
+			t3.daemon = True
+			t3.start()
+			grid4.draw_grid(pygameScreen)
+			pygame.display.update()
+			t4 = Thread(target = grid4.repaint_grid, name = 'thread4',
+			args = (pygameScreen, red, box_list4, box4, 3)) # Create the thread
+			t4.daemon = True
+			t4.start()
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT:
+					done = True
+				elif event.type == pygame.MOUSEBUTTONDOWN:
+					pos = pygame.mouse.get_pos()
+					print("Click ", pos)
+			clock.tick(60)
+			pygame.display.flip()
 
 		pygame.quit()
 

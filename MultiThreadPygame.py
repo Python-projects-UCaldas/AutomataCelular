@@ -41,7 +41,7 @@ class Ball():
 				self.speedY = self.speedY * -1
 			self.x += self.speedX
 			self.y += self.speedY
-			pygame.time.delay(1)
+			#pygame.time.delay(0)
 
 	#Método que dibuja la bola
 	def draw(self, surface):

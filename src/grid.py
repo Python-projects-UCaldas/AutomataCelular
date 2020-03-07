@@ -94,6 +94,7 @@ class Grid(object):
 					(newBox.getLeft(),newBox.getTop(),
 						newBox.getHeight(), newBox.getWidth()))
 				pygame.display.update()
+				pygame.time.delay(10)
 		
 
 	def positions(self, surface):

@@ -25,14 +25,14 @@
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="2" column="0">
-      <widget class="QPushButton" name="regla">
+      <widget class="QPushButton" name="ruleButton">
        <property name="text">
         <string>Ingresar</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="inputRegla"/>
+      <widget class="QLineEdit" name="inputRule"/>
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
@@ -57,7 +57,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="2" column="0">
-      <widget class="QPushButton" name="base">
+      <widget class="QPushButton" name="baseButton">
        <property name="text">
         <string>Ingresar</string>
        </property>
@@ -89,14 +89,14 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="2" column="0">
-      <widget class="QPushButton" name="anchura">
+      <widget class="QPushButton" name="widthButton">
        <property name="text">
         <string>Ingresar</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="inputAnchura"/>
+      <widget class="QLineEdit" name="inputWidth"/>
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_3">
@@ -121,7 +121,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="Accordion">
        <property name="text">
         <string>Intrumentos</string>
        </property>
@@ -131,21 +131,21 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Trompeta">
+      <widget class="QRadioButton" name="Trumpet">
        <property name="text">
         <string>Trompeta</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Tambor">
+      <widget class="QRadioButton" name="Drums">
        <property name="text">
         <string>Tambor</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Guitarra">
+      <widget class="QRadioButton" name="Guitar">
        <property name="text">
         <string>Guitarra</string>
        </property>
@@ -159,44 +159,44 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Flauta">
+      <widget class="QRadioButton" name="Flute">
        <property name="text">
         <string>Flauta</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Xilofono">
+      <widget class="QRadioButton" name="Xylophone">
        <property name="text">
         <string>Xilofono</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="Maracas">
+      <widget class="QRadioButton" name="Clarinet">
        <property name="text">
-        <string>Maracas</string>
+        <string>Clarinete</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_8">
+      <widget class="QRadioButton" name="Tuba">
        <property name="text">
-        <string>RadioButton</string>
+        <string>Tuba</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_9">
+      <widget class="QRadioButton" name="Organ">
        <property name="text">
-        <string>RadioButton</string>
+        <string>Organo</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_10">
+      <widget class="QRadioButton" name="Harmonica">
        <property name="text">
-        <string>RadioButton</string>
+        <string>armónica</string>
        </property>
       </widget>
      </item>
@@ -213,14 +213,14 @@
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
      <item row="2" column="0">
-      <widget class="QPushButton" name="intervalo">
+      <widget class="QPushButton" name="intervalButton">
        <property name="text">
         <string>Ingresar</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="inputIntervalo"/>
+      <widget class="QLineEdit" name="inputInterval"/>
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_5">
