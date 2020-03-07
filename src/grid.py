@@ -1,4 +1,8 @@
 import pygame, random
+#lineas para hallar la ruta relativa
+import os, sys
+APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
+os.chdir(APP_FOLDER)
 
 class Box(object):
 	"""
@@ -52,7 +56,10 @@ class Box(object):
 
 class Grid(object):
 	""""""
-	def __init__(self, rows, columns, margin, box):
+	def __init__(self, rows, columns, margin, box,name):
+		self.name=name
+		self.sonidos={}
+		self.loadSounds()
 		self.color = box.getColor()
 		self.rows = rows
 		self.columns = columns
@@ -93,6 +100,11 @@ class Grid(object):
 				pygame.draw.rect(surface, newBox.getColor(),
 					(newBox.getLeft(),newBox.getTop(),
 						newBox.getHeight(), newBox.getWidth()))
+				#aqui va la magia
+				instrumento= self.sonidos.get(self.name)
+				if instrumento:
+					pygame.mixer.Sound(instrumento[random.randint(0,4)]).play()
+
 				pygame.display.update()
 				pygame.time.delay(10)
 		
@@ -111,3 +123,39 @@ class Grid(object):
 					 self.box.getValue())
 				positions[posx, posy] = random.randint(0,5)
 		return positions
+
+	def loadSounds(self):
+			
+			xilofone=[]
+			xilofone.append(pygame.mixer.Sound("sounds/xilofone/A1.ogg"))
+			xilofone.append(pygame.mixer.Sound("sounds/xilofone/B1.ogg"))
+			xilofone.append(pygame.mixer.Sound("sounds/xilofone/C1.ogg"))
+			xilofone.append(pygame.mixer.Sound("sounds/xilofone/D1.ogg"))
+			xilofone.append(pygame.mixer.Sound("sounds/silence.ogg"))
+			self.sonidos["xilofone"]=xilofone
+			
+			
+			guitar=[]  
+			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_095333-[5].wav"))
+			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_095823-[4].wav"))
+			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_095938-[3].wav"))
+			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_100353-[5].wav"))
+			guitar.append(pygame.mixer.Sound("sounds/silence.ogg"))
+			self.sonidos["guitar"]=guitar
+			
+			saxo=[]
+			saxo.append(pygame.mixer.Sound("sounds/saxo/316898__jaz-the-man-2__do.wav"))
+			saxo.append(pygame.mixer.Sound("sounds/saxo/316902__jaz-the-man-2__la.wav"))
+			saxo.append(pygame.mixer.Sound("sounds/saxo/316906__jaz-the-man-2__mi.wav"))
+			saxo.append(pygame.mixer.Sound("sounds/saxo/316908__jaz-the-man-2__re.wav"))
+			saxo.append(pygame.mixer.Sound("sounds/silence.ogg"))
+			self.sonidos["saxo"]=saxo
+
+			maracas=[]
+			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_01.wav"))
+			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_02.wav"))
+			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_03.wav"))
+			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_04.wav"))
+			maracas.append(pygame.mixer.Sound("sounds/silence.ogg"))
+			self.sonidos["maracas"]=maracas
+

@@ -47,10 +47,10 @@ class WindowPQ(QMainWindow):
 		box3 = Box(580, 10, 20, 20, green, 2)
 		box4 = Box(875, 10, 20, 20, purple, 2)
 
-		grid1 = Grid(10, 28, 5, box1)
-		grid2 = Grid(10, 28, 5, box2)
-		grid3 = Grid(10, 28, 5, box3)
-		grid4 = Grid(10, 28, 5, box4)
+		grid1 = Grid(10, 28, 5, box1, "maracas")
+		grid2 = Grid(10, 28, 5, box2, "guitar")
+		grid3 = Grid(10, 28, 5, box3, "xilofone")
+		grid4 = Grid(10, 28, 5, box4, "saxo")
 
 		box_list1 = grid1.positions(pygameScreen)
 		box_list2 = grid2.positions(pygameScreen)
