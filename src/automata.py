@@ -1,5 +1,5 @@
 import itertools
-import random    
+import random
 
 class Automata:
     def __init__(self, rule, radix, limit):
@@ -69,3 +69,34 @@ class Automata:
         """
         next_state = self.transitions[(ladj, act, radj)]
         return next_state
+
+    def get_next_phrase(self, current_phrase):
+        """
+        Gets the following phrase of the automata. A phrase is a list with the cells and its respective states.
+
+        Parameters
+        ----------
+        current_phrase: list
+            The current phrase.
+
+        Returns
+        -------
+        list
+            The next phrase of the automata.
+
+        """
+        next_phrase = []
+        for i in range(len(current_phrase)):
+            ladj = current_phrase[i-1] #left adjacent
+            act = current_phrase[i] #actual state
+            # If the i index is the last item of the phrase,
+            # then right adjacent will be the first item of the phrase
+            # otherwise the right adjacent will be the i+1 element.
+            if i == len(current_phrase) - 1:
+                radj = current_phrase[0]
+            else:
+                radj = current_phrase[i+1]
+
+            next_state = self.get_next_state(ladj, act, radj)
+            next_phrase.append(next_state)
+        return next_phrase
