@@ -59,7 +59,7 @@ class Grid(object):
 	def __init__(self, rows, columns, margin, box,name):
 		self.name=name
 		self.sonidos={}
-		self.loadSounds()
+		self.loadSounds(self.name)
 		self.color = box.getColor()
 		self.rows = rows
 		self.columns = columns
@@ -124,8 +124,10 @@ class Grid(object):
 				positions[posx, posy] = random.randint(0,5)
 		return positions
 
-	def loadSounds(self):
-			
+	def loadSounds(self, nombre):
+
+
+		if nombre == "xilofone"	:
 			xilofone=[]
 			xilofone.append(pygame.mixer.Sound("sounds/xilofone/A1.ogg"))
 			xilofone.append(pygame.mixer.Sound("sounds/xilofone/B1.ogg"))
@@ -134,7 +136,8 @@ class Grid(object):
 			xilofone.append(pygame.mixer.Sound("sounds/silence.ogg"))
 			self.sonidos["xilofone"]=xilofone
 			
-			
+		elif nombre == "guitar":
+				
 			guitar=[]  
 			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_095333-[5].wav"))
 			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_095823-[4].wav"))
@@ -142,7 +145,7 @@ class Grid(object):
 			guitar.append(pygame.mixer.Sound("sounds/guitar/130624_100353-[5].wav"))
 			guitar.append(pygame.mixer.Sound("sounds/silence.ogg"))
 			self.sonidos["guitar"]=guitar
-			
+		elif nombre =="saxo":	
 			saxo=[]
 			saxo.append(pygame.mixer.Sound("sounds/saxo/316898__jaz-the-man-2__do.wav"))
 			saxo.append(pygame.mixer.Sound("sounds/saxo/316902__jaz-the-man-2__la.wav"))
@@ -150,7 +153,8 @@ class Grid(object):
 			saxo.append(pygame.mixer.Sound("sounds/saxo/316908__jaz-the-man-2__re.wav"))
 			saxo.append(pygame.mixer.Sound("sounds/silence.ogg"))
 			self.sonidos["saxo"]=saxo
-
+		elif nombre == "maracas" :
+			
 			maracas=[]
 			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_01.wav"))
 			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_02.wav"))
@@ -158,4 +162,6 @@ class Grid(object):
 			maracas.append(pygame.mixer.Sound("sounds/Maracas/LPSP_MARACAS_04.wav"))
 			maracas.append(pygame.mixer.Sound("sounds/silence.ogg"))
 			self.sonidos["maracas"]=maracas
+		else:
+			pass
 
