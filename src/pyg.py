@@ -19,14 +19,16 @@ class pygWindow:
         self.clock = pygame.time.Clock()
         self.timer = timer
         self.repaint_evt = pygame.USEREVENT + 1
+        self.sound_evt = pygame.USEREVENT + 2
 
-        self.automata = Automata(None, 3, 10, [0, 1, 2, 2, 0, 1, 2, 0, 1, 2])
+        self.automata = Automata(None, 3, 10, [0, 1, 4, 2, 3, 1, 2, 4, 1, 2])
         self.iterator = 0
         self.iterator2 = 14
         self.iterator3 = 28
         self.j = 0
 
-        pygame.time.set_timer(self.repaint_evt, 100)
+        pygame.time.set_timer(self.repaint_evt, 1000)
+        pygame.time.set_timer(self.sound_evt, 1005)
 
     def handle_events(self):
         """
@@ -38,6 +40,8 @@ class pygWindow:
                 sys.exit()
             elif evt.type == self.repaint_evt:
                 self.draw_stuff()
+            elif evt.type == self.sound_evt:
+                self.play_sounds()
             else:
                 pass
               
@@ -45,15 +49,18 @@ class pygWindow:
         """
         """
         if self.iterator < self.grid.cols:
-            if self.iterator < len(self.automata.phrase) and self.iterator2 < len(self.automata.phrase) and self.iterator3 < len(self.automata.phrase):
+            if self.iterator < len(self.automata.phrase):
                 box_value = self.automata.phrase[self.iterator]
                 self.iterator = self.grid.repaint_box(self.surface, self.iterator, box_value)
                 self.iterator2 = self.grid2.repaint_box(self.surface, self.iterator2, box_value)
                 self.iterator3 = self.grid3.repaint_box(self.surface, self.iterator3, box_value)
-                i1 = self.automata.phrase[self.iterator]
-                i2 = self.automata.phrase[self.iterator2]
-                i3 = self.automata.phrase[self.iterator3]
-                print(i1, i2, i3)
+                if self.iterator < len(self.automata.phrase):
+                    i1 = self.automata.phrase[self.iterator]
+                    i2 = self.automata.phrase[self.iterator]
+                    i3 = self.automata.phrase[self.iterator]
+                    print(i1, i2, i3)
+                    self.play_sounds(i1, i2, i3)
+                #print(i1, i2, i3)
                 #self.play_sounds(i1, i2, i3)
 
             if self.iterator == self.grid.cols:
@@ -67,7 +74,7 @@ class pygWindow:
             self.iterator3 = 28
             self.automata.phrase = self.automata.get_next_phrase(self.automata.phrase)
 
-    def play_sounds(self, i1, i2, i3):
+    def play_sounds(self):
         """
         """
         pygame.mixer.Channel(0).play(sound.xilofone[i1])
