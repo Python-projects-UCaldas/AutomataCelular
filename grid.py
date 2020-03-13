@@ -1,54 +1,66 @@
-import pygame, random
-from box import *
+import const as cons
+import pygame
 
-class Grid(object):
-	""""""
-	def __init__(self, rows, columns, margin, box):
-		self.color = box.getColor()
-		self.rows = rows
-		self.columns = columns
-		self.margin = margin
-		self.box = Box(box.getLeft(), box.getTop(), 
-			box.getHeight(), box.getWidth(), 
-			box.getColor(), box.getValue())
-		
-	def draw_grid(self, surface):
-		posx = self.box.getLeft()
-		posy = self.box.getTop()
-		for r in range(self.rows):
-			posx += self.box.getWidth() + self.margin
-			posy = self.box.getTop()
-			for c in range(self.columns):
-				posy += self.box.getHeight() + self.margin
-				newBox = Box(posx, posy, self.box.getWidth(), 
-					self.box.getHeight(), self.box.getColor(),
-					 self.box.getValue())
-				pygame.draw.rect(surface, newBox.getColor(), 
-					(newBox.getLeft(),newBox.getTop(), 
-						newBox.getHeight(), newBox.getWidth()))
+class Grid:
+    def __init__(self, iniX, iniY, rows, cols, width, height, margin=5):
+        self.iniX = iniX
+        self.iniY = iniY
+        self.rows = rows
+        self.cols = cols
+        self.width = width
+        self.height = height
+        self.margin = margin
+        self.boxes = {}
+        self.current_row = 0
+        #self.paint_evt = pygame.USEREVENT + 1
 
-	def repaint_grid(self, surface, color, positions, box, value):
+    def draw_grid(self, surface):
+        """
+        Draws the initial grid.
+        """
+        y = self.iniY
+        for r in range(self.rows):
+            x = self.iniX
+            for c in range(self.cols):
+                self.boxes.update({(x, y): 0})
+                pygame.draw.rect(surface, cons.WHITE, (x, y, self.width, self.height))
+                x += self.width + self.margin
+            y += self.height + self.margin
+        pygame.display.update()
 
-		for k, v in positions.items(): 
-			if v == value:
-				newBox = Box(tuple(k)[0], tuple(k)[1], self.box.getWidth(),
-					self.box.getHeight(), color,
-					value)
-				pygame.draw.rect(surface, newBox.getColor(),
-					(newBox.getLeft(),newBox.getTop(),
-						newBox.getHeight(), newBox.getWidth()))
+    def repaint_box(self, surface, i, color_key):
+        """
+        Repaints a single box of the grid.
+        """
+        x = (i+1)*self.width + (i+1)*self.margin
+        y = (self.current_row+1)*self.height + (self.current_row+1)*self.margin
+        pygame.draw.rect(surface, cons.color_keys[color_key], (x, y, self.width, self.height))
+        pygame.display.update((x, y, self.width, self.height))
+        i += 1
+        return i
 
-	def positions(self, surface):
-		positions = {}
-		posx = self.box.getLeft()
-		posy = self.box.getTop()
-		for r in range(self.rows):
-			posx += self.box.getWidth() + self.margin
-			posy = self.box.getTop()
-			for c in range(self.columns):
-				posy += self.box.getHeight() + self.margin
-				newBox = Box(posx, posy, self.box.getWidth(), 
-					self.box.getHeight(), self.box.getColor(),
-					 self.box.getValue())
-				positions[posx, posy] = random.randint(0,5)
-		return positions
+    def repaint_row(self, surface, color_key_list):
+        """
+        Repaints a row of the grid.
+
+        Parameters
+        ----------
+        surface: pygame.display
+            The target surface to paint.
+
+        color_key_list: list
+            The list which has the color keys to paint each box.
+
+        Returns
+        -------
+        None.
+
+        """
+        for i in range(len(color_key_list)):
+            x = (i+1)*self.width + (i+1)*self.margin
+            y = (self.current_row+1)*self.height + (self.current_row+1)*self.margin
+            color_key = color_key_list[i]
+            color = cons.color_keys[color_key]
+            pygame.draw.rect(surface, color, (x, y, self.width, self.height))
+            pygame.display.update()
+        self.current_row += 1

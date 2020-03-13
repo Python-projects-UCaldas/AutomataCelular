@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>483</width>
-    <height>452</height>
+    <width>445</width>
+    <height>504</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,17 +20,10 @@
       <x>30</x>
       <y>0</y>
       <width>207</width>
-      <height>82</height>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="ruleButton">
-       <property name="text">
-        <string>Ingresar</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLineEdit" name="inputRule"/>
      </item>
@@ -44,29 +37,20 @@
        </property>
       </widget>
      </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>207</width>
-      <height>82</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="baseButton">
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="inputBase"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Ingresar</string>
+        <string>Intervalo</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="inputBase"/>
-     </item>
-     <item row="0" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Base</string>
@@ -76,6 +60,9 @@
        </property>
       </widget>
      </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="interval"/>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget_3">
@@ -84,27 +71,66 @@
       <x>30</x>
       <y>180</y>
       <width>207</width>
-      <height>82</height>
+      <height>238</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="widthButton">
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_7">
        <property name="text">
-        <string>Ingresar</string>
+        <string>Limite</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLineEdit" name="limit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Estado 2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="state2"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Estado 3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="state3"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Estado 1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLineEdit" name="inputWidth"/>
+      <widget class="QLineEdit" name="state1"/>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_3">
+     <item row="6" column="0">
+      <widget class="QPushButton" name="addState">
        <property name="text">
-        <string>Anchura</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <string>Agregar Estados</string>
        </property>
       </widget>
      </item>
@@ -116,7 +142,7 @@
       <x>260</x>
       <y>0</y>
       <width>160</width>
-      <height>288</height>
+      <height>323</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -135,12 +161,24 @@
        <property name="text">
         <string>Trompeta</string>
        </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="Drums">
        <property name="text">
         <string>Tambor</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -149,12 +187,18 @@
        <property name="text">
         <string>Guitarra</string>
        </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="Piano">
        <property name="text">
         <string>Piano</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -163,12 +207,18 @@
        <property name="text">
         <string>Flauta</string>
        </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="Xylophone">
        <property name="text">
         <string>Xilofono</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -177,12 +227,18 @@
        <property name="text">
         <string>Clarinete</string>
        </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="Tuba">
        <property name="text">
         <string>Tuba</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -191,6 +247,9 @@
        <property name="text">
         <string>Organo</string>
        </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -198,37 +257,15 @@
        <property name="text">
         <string>armónica</string>
        </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="gridLayoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>270</y>
-      <width>207</width>
-      <height>82</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="2" column="0">
-      <widget class="QPushButton" name="intervalButton">
-       <property name="text">
-        <string>Ingresar</string>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="inputInterval"/>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_5">
+     <item>
+      <widget class="QPushButton" name="addInstruments">
        <property name="text">
-        <string>Intervarlo</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+        <string>Agregar Instrumentos</string>
        </property>
       </widget>
      </item>
@@ -238,9 +275,9 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>300</y>
+      <y>350</y>
       <width>160</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -259,7 +296,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>483</width>
+     <width>445</width>
      <height>26</height>
     </rect>
    </property>
