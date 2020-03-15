@@ -30,7 +30,7 @@ interval = 0
 
 class WindowPQ(QMainWindow):
     def __init__(self):
-
+        #1,1,1,2,1,2,1,0,0,0
         # iniciar pbjeto QMainWindow
         QMainWindow.__init__(self)
         # Cargar archivo
@@ -49,9 +49,7 @@ class WindowPQ(QMainWindow):
                 state1,
                 state2,
                 state3,
-                enumerateList[0],
-                enumerateList[1],
-                enumerateList[2],
+                enumerateList,
                 limit
             )
         )
@@ -79,7 +77,6 @@ class WindowPQ(QMainWindow):
         state1 = self.states(self.state1.text())
         state2 = self.states(self.state2.text())
         state3 = self.states(self.state3.text())
-        print(base)
 
 
     def states(self, string):
@@ -89,33 +86,33 @@ class WindowPQ(QMainWindow):
 
     def instrument(self):
         instruments = []
-        if self.Trumpet.isChecked():
-            instruments.append("Trumpet")
-        if self.Drums.isChecked():
-            instruments.append("Drums")
-        if self.Guitar.isChecked():
-            instruments.append("Guitar")
-        if self.Piano.isChecked():
-            if len(instruments) < 4:
-                instruments.append("Piano")
+        if self.Bamboo.isChecked():
+            instruments.append("Bamboo")
+        if self.Bass.isChecked():
+            instruments.append("Bass")
+        if self.Bell.isChecked():
+            instruments.append("Bell")
         if self.Flute.isChecked():
             if len(instruments) < 4:
                 instruments.append("Flute")
-        if self.Xylophone.isChecked():
+        if self.Guitar.isChecked():
             if len(instruments) < 4:
-                instruments.append("Xylophone")
-        if self.Clarinet.isChecked():
+                instruments.append("Guitar")
+        if self.MusicBox.isChecked():
             if len(instruments) < 4:
-                instruments.append("Clarinet")
-        if self.Tuba.isChecked():
+                instruments.append("MusicBox")
+        if self.Synthesizer.isChecked():
             if len(instruments) < 4:
-                instruments.append("Tuba")
-        if self.Organ.isChecked():
+                instruments.append("Synthesizer")
+        if self.Triangles.isChecked():
             if len(instruments) < 4:
-                instruments.append("Organ")
-        if self.Harmonica.isChecked():
+                instruments.append("Triangles")
+        if self.Violin.isChecked():
             if len(instruments) < 4:
-                instruments.append("Harmonica")
+                instruments.append("Violin")
+        if self.Voice.isChecked():
+            if len(instruments) < 4:
+                instruments.append("Voice")
         global enumerateList
         enumerateList = instruments
         #print(enumerateList)
@@ -128,10 +125,8 @@ class WindowPQ(QMainWindow):
         state1,
         state2,
         state3,
-        instrument1,
-        instrument2,
-        instrument3,
-        limit,
+        sounds,
+        limit
     ):
         """
 		Instances the pygame window and creates the main loop.
@@ -143,9 +138,7 @@ class WindowPQ(QMainWindow):
             state1,
             state2,
             state3,
-            instrument1,
-            instrument2,
-            instrument3,
+            sounds,
             limit
         )
         # text, None, [0,1,2,1,1,0,2,0,1,2], [0,1,2,1,1,0,2,0,1,2], [0,1,2,1,1,0,2,0,1,2], None, None, None, 10)

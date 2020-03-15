@@ -6,7 +6,7 @@ import sound
 import sys
 
 class pygWindow:
-    def __init__(self, timer, base, rule, state1, state2, state3, instrument1, instrument2, instrument3, limit):
+    def __init__(self, timer, base, rule, state1, state2, state3, instruments, limit):
         pygame.init()
         pygame.display.set_caption('Automata')
         self.surface = pygame.display.set_mode((c.WIDTH, c.HEIGHT))
@@ -15,6 +15,8 @@ class pygWindow:
         self.grid = Grid(20, 20, 40, 10, 15, 15)
         self.grid2 = Grid(300, 20, 40, 10, 15, 15)
         self.grid3 = Grid(580, 20, 40, 10, 15, 15)
+
+        self.instruments = instruments
 
         self.clock = pygame.time.Clock()
         self.timer = timer
@@ -76,10 +78,27 @@ class pygWindow:
         """
         if self.iterator < len(self.automata1.phrase):
             i1 = self.automata1.phrase[self.iterator]
-            i2 = self.automata1.phrase[self.iterator]
-            i3 = self.automata1.phrase[self.iterator]
+            i2 = self.automata2.phrase[self.iterator]
+            i3 = self.automata3.phrase[self.iterator]
         else:
             i1 = i2 = i3 = 0
-        pygame.mixer.Channel(0).play(sound.xilofone[i1])
-        pygame.mixer.Channel(1).play(sound.guitar[i2])
-        pygame.mixer.Channel(2).play(sound.maracas[i3])
+        if 'Bamboo' in self.instruments:
+            pygame.mixer.Channel(0).play(sound.bamboo[i1])
+        if 'Bass' in self.instruments:
+            pygame.mixer.Channel(1).play(sound.bass[i2])
+        if 'Bell' in self.instruments:
+            pygame.mixer.Channel(2).play(sound.bell[i3])
+        if 'Flute' in self.instruments:
+            pygame.mixer.Channel(0).play(sound.flute[i3])
+        if 'Guitar' in self.instruments:
+            pygame.mixer.Channel(1).play(sound.guitar[i3])
+        if 'MusicBox' in self.instruments:
+            pygame.mixer.Channel(2).play(sound.musicBox[i3])
+        if 'Synthesizer' in self.instruments:
+            pygame.mixer.Channel(0).play(sound.synthesizer[i3])
+        if 'Triangles' in self.instruments:
+            pygame.mixer.Channel(1).play(sound.triangles[i3])
+        if 'Violin' in self.instruments:
+            pygame.mixer.Channel(2).play(sound.violin[i3])
+        if 'Voice' in self.instruments:
+            pygame.mixer.Channel(0).play(sound.voice[i3])

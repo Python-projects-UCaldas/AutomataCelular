@@ -147,6 +147,26 @@
       </widget>
      </item>
      <item row="1" column="4">
+      <widget class="QRadioButton" name="Violin">
+       <property name="text">
+        <string>Violín</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QRadioButton" name="Voice">
+       <property name="text">
+        <string>Voz</string>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
       <widget class="QRadioButton" name="Flute">
        <property name="text">
         <string>Flauta</string>
@@ -156,30 +176,10 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="4">
-      <widget class="QRadioButton" name="Harmonica">
-       <property name="text">
-        <string>armónica</string>
-       </property>
-       <property name="autoExclusive">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QRadioButton" name="Clarinet">
-       <property name="text">
-        <string>Clarinete</string>
-       </property>
-       <property name="autoExclusive">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="2">
-      <widget class="QRadioButton" name="Tuba">
+      <widget class="QRadioButton" name="MusicBox">
        <property name="text">
-        <string>Tuba</string>
+        <string>Caja Musical</string>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -187,9 +187,9 @@
       </widget>
      </item>
      <item row="2" column="3">
-      <widget class="QRadioButton" name="Organ">
+      <widget class="QRadioButton" name="Triangles">
        <property name="text">
-        <string>Organo</string>
+        <string>Triangulo</string>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -207,9 +207,9 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QRadioButton" name="Xylophone">
+      <widget class="QRadioButton" name="Bass">
        <property name="text">
-        <string>Xilofono</string>
+        <string>Bajo</string>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -217,9 +217,9 @@
       </widget>
      </item>
      <item row="1" column="3">
-      <widget class="QRadioButton" name="Piano">
+      <widget class="QRadioButton" name="Synthesizer">
        <property name="text">
-        <string>Piano</string>
+        <string>Organeta</string>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -227,9 +227,9 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QRadioButton" name="Trumpet">
+      <widget class="QRadioButton" name="Bamboo">
        <property name="text">
-        <string>Trompeta</string>
+        <string>Bambú</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -247,9 +247,9 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QRadioButton" name="Drums">
+      <widget class="QRadioButton" name="Bell">
        <property name="text">
-        <string>Tambor</string>
+        <string>Campana</string>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -348,7 +348,7 @@
      <x>0</x>
      <y>0</y>
      <width>548</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
