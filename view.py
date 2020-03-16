@@ -89,16 +89,16 @@ class pygWindow:
         if 'Bell' in self.instruments:
             pygame.mixer.Channel(2).play(sound.bell[i3])
         if 'Flute' in self.instruments:
-            pygame.mixer.Channel(0).play(sound.flute[i3])
+            pygame.mixer.Channel(3).play(sound.flute[i3])
         if 'Guitar' in self.instruments:
-            pygame.mixer.Channel(1).play(sound.guitar[i3])
+            pygame.mixer.Channel(4).play(sound.guitar[i3])
         if 'MusicBox' in self.instruments:
-            pygame.mixer.Channel(2).play(sound.musicBox[i3])
+            pygame.mixer.Channel(5).play(sound.musicBox[i3])
         if 'Synthesizer' in self.instruments:
-            pygame.mixer.Channel(0).play(sound.synthesizer[i3])
+            pygame.mixer.Channel(6).play(sound.synthesizer[i3])
         if 'Triangles' in self.instruments:
-            pygame.mixer.Channel(1).play(sound.triangles[i3])
+            pygame.mixer.Channel(7).play(sound.triangles[i3])
         if 'Violin' in self.instruments:
-            pygame.mixer.Channel(2).play(sound.violin[i3])
+            pygame.mixer.Channel(8).play(sound.violin[i3])
         if 'Voice' in self.instruments:
-            pygame.mixer.Channel(0).play(sound.voice[i3])
+            pygame.mixer.Channel(9).play(sound.voice[i3])

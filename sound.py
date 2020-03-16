@@ -1,5 +1,6 @@
 import pygame
-pygame.mixer.init(channels=3)
+pygame.mixer.init()
+pygame.mixer.set_num_channels(10)
 
 bass = []
 musicBox = []
