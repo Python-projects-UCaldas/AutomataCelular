@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>548</width>
-    <height>493</height>
+    <width>822</width>
+    <height>569</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>380</y>
+      <x>330</x>
+      <y>460</y>
       <width>160</width>
       <height>61</height>
      </rect>
@@ -36,9 +36,9 @@
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>491</width>
+      <x>160</x>
+      <y>340</y>
+      <width>501</width>
       <height>112</height>
      </rect>
     </property>
@@ -123,10 +123,10 @@
    <widget class="QWidget" name="gridLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>240</y>
-      <width>491</width>
-      <height>121</height>
+      <x>60</x>
+      <y>50</y>
+      <width>701</width>
+      <height>182</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -151,6 +151,16 @@
        <property name="text">
         <string>Violín</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/violin1.png</normaloff>../../../../../imagenes/violin1.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="autoExclusive">
         <bool>false</bool>
        </property>
@@ -160,6 +170,16 @@
       <widget class="QRadioButton" name="Voice">
        <property name="text">
         <string>Voz</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/voz.png</normaloff>../../../../../imagenes/voz.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -171,6 +191,16 @@
        <property name="text">
         <string>Flauta</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/flauta.png</normaloff>../../../../../imagenes/flauta.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="autoExclusive">
         <bool>false</bool>
        </property>
@@ -180,6 +210,16 @@
       <widget class="QRadioButton" name="MusicBox">
        <property name="text">
         <string>Caja Musical</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/musicBox.png</normaloff>../../../../../imagenes/musicBox.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -191,6 +231,16 @@
        <property name="text">
         <string>Triangulo</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/triangulo.png</normaloff>../../../../../imagenes/triangulo.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="autoExclusive">
         <bool>false</bool>
        </property>
@@ -200,6 +250,16 @@
       <widget class="QRadioButton" name="Guitar">
        <property name="text">
         <string>Guitarra</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/guitar.png</normaloff>../../../../../imagenes/guitar.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
        </property>
        <property name="autoExclusive">
         <bool>false</bool>
@@ -211,6 +271,16 @@
        <property name="text">
         <string>Bajo</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/bajo.png</normaloff>../../../../../imagenes/bajo.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="autoExclusive">
         <bool>false</bool>
        </property>
@@ -221,6 +291,16 @@
        <property name="text">
         <string>Organeta</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/organeta.jpg</normaloff>../../../../../imagenes/organeta.jpg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
        <property name="autoExclusive">
         <bool>false</bool>
        </property>
@@ -230,6 +310,16 @@
       <widget class="QRadioButton" name="Bamboo">
        <property name="text">
         <string>Bambú</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/BambooFlute.png</normaloff>../../../../../imagenes/BambooFlute.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -250,6 +340,16 @@
       <widget class="QRadioButton" name="Bell">
        <property name="text">
         <string>Campana</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../imagenes/campana.png</normaloff>../../../../../imagenes/campana.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -277,9 +377,9 @@
    <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>491</width>
+      <x>160</x>
+      <y>250</y>
+      <width>501</width>
       <height>70</height>
      </rect>
     </property>
@@ -347,8 +447,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>548</width>
-     <height>21</height>
+     <width>822</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
