@@ -49,6 +49,7 @@ class Automata:
         #print(self.rule)
         states = itertools.product(iter, repeat=3) #Does all combinations for every possible state 
         states = set(states)
+        #print(self.rule)
 
         self.transitions = dict(zip(sorted(states), self.rule))
         #print(len(self.transitions), self.transitions)
@@ -126,4 +127,6 @@ class Automata:
 
         while len(self.rules) < self.radix**3:
             self.rules.append('0')
-        return ''.join(reversed(self.rules))
+        #return ''.join(reversed(self.rules))
+        self.rule = ''.join(reversed(self.rules))
+        self.rule = [int(r) for r in self.rule]

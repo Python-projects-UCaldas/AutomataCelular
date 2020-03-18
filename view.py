@@ -82,23 +82,101 @@ class pygWindow:
             i3 = self.automata3.phrase[self.iterator]
         else:
             i1 = i2 = i3 = 0
+
+        print(i1, i2, i3)
+        aux1 = False #if i1 was used
+        aux2 = False #if i2 was used
+        aux3 = False #if i3 was used
         if 'Bamboo' in self.instruments:
             pygame.mixer.Channel(0).play(sound.bamboo[i1])
+            aux1 = True
         if 'Bass' in self.instruments:
-            pygame.mixer.Channel(1).play(sound.bass[i2])
+            if not aux1:
+                pygame.mixer.Channel(1).play(sound.bass[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(1).play(sound.bass[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(1).play(sound.bass[i3])
+                aux3 = True
         if 'Bell' in self.instruments:
-            pygame.mixer.Channel(2).play(sound.bell[i3])
+            if not aux1:
+                pygame.mixer.Channel(2).play(sound.bell[i1])
+                aux1 = True
+            elif not aux1:
+                pygame.mixer.Channel(2).play(sound.bell[i2])
+                aux2 = True
+            elif not aux1:
+                pygame.mixer.Channel(2).play(sound.bell[i3])
+                aux3 = True
         if 'Flute' in self.instruments:
-            pygame.mixer.Channel(3).play(sound.flute[i3])
+            if not aux1:
+                pygame.mixer.Channel(3).play(sound.flute[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(3).play(sound.flute[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(3).play(sound.flute[i3])
+                aux3 = True
         if 'Guitar' in self.instruments:
-            pygame.mixer.Channel(4).play(sound.guitar[i3])
+            if not aux1:
+                pygame.mixer.Channel(4).play(sound.guitar[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(4).play(sound.guitar[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(4).play(sound.guitar[i3])
+                aux3 = True
         if 'MusicBox' in self.instruments:
-            pygame.mixer.Channel(5).play(sound.musicBox[i3])
+            if not aux1:
+                pygame.mixer.Channel(5).play(sound.musicBox[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(5).play(sound.musicBox[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(5).play(sound.musicBox[i3])
+                aux3 = True
         if 'Synthesizer' in self.instruments:
-            pygame.mixer.Channel(6).play(sound.synthesizer[i3])
+            if not aux1:
+                pygame.mixer.Channel(6).play(sound.synthesizer[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(6).play(sound.synthesizer[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(6).play(sound.synthesizer[i3])
+                aux3 = True
         if 'Triangles' in self.instruments:
-            pygame.mixer.Channel(7).play(sound.triangles[i3])
+            if not aux1:
+                pygame.mixer.Channel(7).play(sound.triangles[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(7).play(sound.triangles[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(7).play(sound.triangles[i3])
+                aux3 = True
         if 'Violin' in self.instruments:
-            pygame.mixer.Channel(8).play(sound.violin[i3])
+            if not aux1:
+                pygame.mixer.Channel(8).play(sound.violin[i1])    
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(8).play(sound.violin[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(8).play(sound.violin[i3])
+                aux3 = True
         if 'Voice' in self.instruments:
-            pygame.mixer.Channel(9).play(sound.voice[i3])
+            if not aux1:
+                pygame.mixer.Channel(9).play(sound.voice[i1])
+                aux1 = True
+            elif not aux2:
+                pygame.mixer.Channel(9).play(sound.voice[i2])
+                aux2 = True
+            elif not aux3:
+                pygame.mixer.Channel(9).play(sound.voice[i3])
+                aux3 = True
