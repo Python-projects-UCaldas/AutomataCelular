@@ -14,32 +14,13 @@
    <string>Automata Celular</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>460</y>
-      <width>160</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="start">
-       <property name="text">
-        <string>Start</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
       <x>160</x>
       <y>340</y>
       <width>501</width>
-      <height>112</height>
+      <height>113</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -90,6 +71,10 @@
        <property name="text">
         <string>Agregar Estados</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>img/add.png</normaloff>img/add.png</iconset>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
@@ -126,7 +111,7 @@
       <x>60</x>
       <y>50</y>
       <width>701</width>
-      <height>182</height>
+      <height>183</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_3">
@@ -334,6 +319,10 @@
        <property name="text">
         <string>Agregar Instrumentos</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>img/add.png</normaloff>img/add.png</iconset>
+       </property>
       </widget>
      </item>
      <item row="1" column="1">
@@ -440,6 +429,29 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="start">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>470</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/start.png</normaloff>img/start.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

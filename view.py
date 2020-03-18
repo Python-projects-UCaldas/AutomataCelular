@@ -11,7 +11,8 @@ class pygWindow:
         pygame.display.set_caption('Automata')
         self.surface = pygame.display.set_mode((c.WIDTH, c.HEIGHT))
         self.surface.fill(c.BLACK)        
-
+        background_image = pygame.image.load(".\\img\\orchestra.png")
+        self.surface.blit(background_image, [0, 0])
         self.grid = Grid(20, 20, 40, 10, 15, 15)
         self.grid2 = Grid(300, 20, 40, 10, 15, 15)
         self.grid3 = Grid(580, 20, 40, 10, 15, 15)
@@ -53,10 +54,12 @@ class pygWindow:
         """
         if self.iterator < self.grid.cols:
             if self.iterator < len(self.automata1.phrase):
-                box_value = self.automata1.phrase[self.iterator]
-                self.iterator = self.grid.repaint_box(self.surface, self.iterator, box_value)
-                self.iterator2 = self.grid2.repaint_box(self.surface, self.iterator2, box_value)
-                self.iterator3 = self.grid3.repaint_box(self.surface, self.iterator3, box_value)
+                box_value1 = self.automata1.phrase[self.iterator]
+                box_value2 = self.automata2.phrase[self.iterator]
+                box_value3 = self.automata3.phrase[self.iterator]
+                self.iterator = self.grid.repaint_box(self.surface, self.iterator, box_value1)
+                self.iterator2 = self.grid2.repaint_box(self.surface, self.iterator2, box_value2)
+                self.iterator3 = self.grid3.repaint_box(self.surface, self.iterator3, box_value3)
                 #print(i1, i2, i3)
                 #self.play_sounds(i1, i2, i3)
 
